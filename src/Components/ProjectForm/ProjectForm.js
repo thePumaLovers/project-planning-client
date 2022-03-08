@@ -11,7 +11,7 @@ function ProjectForm() {
   return (
     <div>
       <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
+       Add Project
       </Button>
 
       <Modal
@@ -27,14 +27,14 @@ function ProjectForm() {
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Project Name</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Control type="text" value="" placeholder="Name of project" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Project Description</Form.Label>
-              <Form.Control type="email" placeholder="Enter description" />
+              <Form.Control type="Textarea" value="" placeholder="Enter description" />
             </Form.Group>  <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Completed?</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Control type="completed" value="" placeholder="Enter email" />
             </Form.Group>
           </Form>
         </Modal.Body>
