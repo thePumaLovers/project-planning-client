@@ -6,9 +6,41 @@ import { useState } from 'react';
 const GroupForm = () => {
 
   const [show, setShow] = useState(false);
+  const [form, setForm] = useState({
+    groupName: "",
+    location: "",
+    projects: []
+  });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // handleChange
+  const handleChange = (event) => {
+    event.preventDefault();
+    if (event.target.id === "formGroupName") {
+      setForm({ ...form, groupName: event.target.value });
+    } else if (event.target.id === "formLocation") {
+      setForm({ ...form, location: event.target.value });
+    }
+  };
+
+
+  // const handleChange = (event) => {
+  //   event.preventDefault();
+  //   console.log(event.target.id);
+  //   if (event.target.id === "formGroupName") {
+  //     setForm({ ...form, groupName: event.target.value });
+  //   } else if (event.target.id === "formLocation") {
+  //     setForm({ ...form, location: event.target.value });
+  //   }
+  // };
+
+  // handleSubmit
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(form)
+  }
 
   return (
     <div>
@@ -21,7 +53,35 @@ const GroupForm = () => {
           <Modal.Title>Add New Group</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3 group-form" controlId="formGroupName">
+              <Form.Label>Group Name</Form.Label>
+              <Form.Control type="input" placeholder="Enter group name" value={form.groupName} onChange={handleChange}/>
+            </Form.Group>
+            <Button variant="secondary" onClick={handleSubmit}>
+              Submit
+            </Button>
+          </Form>
+        {/* <Form>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text>
+  </Form.Group>
 
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" placeholder="Password" />
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form> */}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
