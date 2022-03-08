@@ -1,32 +1,41 @@
-import Header from './Components/Header/Header'
-import LandingPage from './Components/LandingPage/LandingPage';
-import GroupsPage from './Components/GroupsPage/GroupsPage';
-import ProjectsPage from './Components/ProjectsPage/ProjectsPage';
-import TeamPage from './Components/TeamPage/TeamPage';
+import Header from "./Components/Header/Header";
+import LandingPage from "./Components/LandingPage/LandingPage";
+import GroupsPage from "./Components/GroupsPage/GroupsPage";
+import ProjectsPage from "./Components/ProjectsPage/ProjectsPage";
+import ProjectPage from "./Components/ProjectPage/ProjectPage";
+import TeamPage from "./Components/TeamPage/TeamPage";
+import Footer from "./Components/Footer/Footer";
 
-import {Routes, Route, Link} from 'react-router-dom'
-import './App.css';
-
+import { Routes, Route, Link } from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-
       <Header />
       <nav>
-
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/groups'>Groups</Link></li>
+          <li><Link to='/projects'>Projects</Link></li>
+          <li><Link to='/team'>Team</Link></li>
+        </ul>
       </nav>
 
       <main>
-      <Routes>
-        <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/groups" element={<GroupsPage />}></Route>
-        <Route path='/projects' element={<ProjectsPage />}></Route>
-        <Route path='/team' element={<TeamPage />}></Route>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<LandingPage />}></Route>
+          <Route path="/groups" element={<GroupsPage />}></Route>
+          <Route path="/projects" element={<ProjectsPage />}></Route>
+          <Route path="/projects/:projectid" element={<ProjectPage />}></Route>
+          <Route path="/team" element={<TeamPage />}></Route>
+        </Routes>
       </main>
 
+      <Footer />
     </div>
+
+   
   );
 }
 
