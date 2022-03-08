@@ -1,9 +1,9 @@
-const GroupPage = () => {
+const Header = () => {
   return (
     <div>
-      <h2>I'm a GroupPage</h2>
+      <h2>I'm a Header</h2>
     </div>
   );
 };
 
-export default GroupPage;
+export default Header;
