@@ -25,17 +25,6 @@ const GroupForm = () => {
     }
   };
 
-
-  // const handleChange = (event) => {
-  //   event.preventDefault();
-  //   console.log(event.target.id);
-  //   if (event.target.id === "formGroupName") {
-  //     setForm({ ...form, groupName: event.target.value });
-  //   } else if (event.target.id === "formLocation") {
-  //     setForm({ ...form, location: event.target.value });
-  //   }
-  // };
-
   // handleSubmit
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -58,9 +47,7 @@ const GroupForm = () => {
               <Form.Label>Group Name</Form.Label>
               <Form.Control type="input" placeholder="Enter group name" value={form.groupName} onChange={handleChange}/>
             </Form.Group>
-            <Button variant="secondary" onClick={handleSubmit}>
-              Submit
-            </Button>
+            
           </Form>
         {/* <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -84,9 +71,13 @@ const GroupForm = () => {
 </Form> */}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
+          <Button variant="primary" onClick={ (event) => {handleSubmit(event); handleClose();}}>
+              Submit
+          </Button>
+          
         </Modal.Footer>
       </Modal>
     </div>
