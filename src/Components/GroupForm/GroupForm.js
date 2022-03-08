@@ -6,7 +6,7 @@ import { useState } from "react";
 const GroupForm = () => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
-    groupName: "",
+    displayName: "",
     location: "",
     projects: [],
   });
@@ -17,8 +17,8 @@ const GroupForm = () => {
   // handleChange
   const handleChange = (event) => {
     event.preventDefault();
-    if (event.target.id === "formGroupName") {
-      setForm({ ...form, groupName: event.target.value });
+    if (event.target.id === "formDisplayName") {
+      setForm({ ...form, displayName: event.target.value });
     } else if (event.target.id === "formLocation") {
       setForm({ ...form, location: event.target.value });
     }
@@ -42,7 +42,7 @@ const GroupForm = () => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3 group-form" controlId="formGroupName">
+            <Form.Group className="mb-3 group-form" controlId="formDisplayName">
               <Form.Label>Group Name</Form.Label>
               <Form.Control
                 type="input"
