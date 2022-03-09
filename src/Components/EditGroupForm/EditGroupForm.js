@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import apiUrl from "../../apiUrl";
 
-const GroupForm = ({toggle, setToggle}) => {
+const EditGroupForm = ({toggle, setToggle, groupId, groupDisplayName, groupLocation, groupProjects}) => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     displayName: "",
@@ -26,13 +26,13 @@ const GroupForm = ({toggle, setToggle}) => {
     }
   };
 
-  // handleSubmit and POST request
+  // handleSubmit and PUT request
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(apiUrl + '/groups', {
-      displayName: form.displayName,
-      location: form.location,
-      projects: []
+    axios.put(apiUrl + '/groups/' + groupId, {
+      displayName: form.displayName === '' ? groupDisplayName : form.displayName,
+      location: form.location === '' ? groupLocation : form.location,
+      projects: groupProjects
     });
     setToggle(!toggle);
 
@@ -40,13 +40,13 @@ const GroupForm = ({toggle, setToggle}) => {
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
-        Add a Group
+      <Button variant="secondary" onClick={handleShow}>
+        Edit Group
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add New Group</Modal.Title>
+          <Modal.Title>Edit Group</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -54,7 +54,7 @@ const GroupForm = ({toggle, setToggle}) => {
               <Form.Label>Group Name</Form.Label>
               <Form.Control
                 type="input"
-                placeholder="Enter group name"
+                placeholder={groupDisplayName}
                 value={form.groupName}
                 onChange={handleChange}
               />
@@ -63,7 +63,7 @@ const GroupForm = ({toggle, setToggle}) => {
               <Form.Label>Location</Form.Label>
               <Form.Control
                 type="input"
-                placeholder="Enter location of group"
+                placeholder={groupLocation}
                 value={form.location}
                 onChange={handleChange}
               />
@@ -89,4 +89,4 @@ const GroupForm = ({toggle, setToggle}) => {
   );
 };
 
-export default GroupForm;
+export default EditGroupForm;
