@@ -5,12 +5,18 @@ import apiUrl from "../../apiUrl";
 
 const GroupsPage = () => {
   const [groups, setGroups] = useState([]);
+  const [toggle, setToggle] = useState(true)
+  // const [newGroup, setNewGroup] = useState({
+  //   displayName: "",
+  //   location: "",
+  //   projects: [],
+  // });
 
   // GET request for all groups
   useEffect(async () => {
     const response = await axios.get(apiUrl + "/groups");
     setGroups(response.data.groups);
-  }, []);
+  }, [toggle]);
 
   const listGroups = groups.map((group, index) => {
     return (
@@ -21,10 +27,11 @@ const GroupsPage = () => {
     )
   })
 
+console.log(groups)
   return (
     <div>
       <h2>I'm a GroupsPage</h2>
-      <GroupForm />
+      <GroupForm toggle={toggle} setToggle={setToggle} />
       {listGroups}
     </div>
   );

@@ -2,8 +2,10 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
+import axios from "axios";
+import apiUrl from "../../apiUrl";
 
-const GroupForm = () => {
+const GroupForm = ({toggle, setToggle}) => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     displayName: "",
@@ -24,10 +26,16 @@ const GroupForm = () => {
     }
   };
 
-  // handleSubmit
+  // handleSubmit and POST request
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
+    axios.post(apiUrl + '/groups', {
+      displayName: form.displayName,
+      location: form.location,
+      projects: []
+    });
+    setToggle(!toggle);
+
   };
 
   return (
