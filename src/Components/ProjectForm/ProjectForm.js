@@ -2,17 +2,20 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
+import axios from "axios";
+import apiUrl from "../../apiUrl";
 
 function ProjectForm() {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const [form, setForm] = useState({
     projectName: "",
     projectDescription: "",
-    projectCompleted: ""
+    isCompleted: false
   });
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
 // handleChange
 const handleChange = (event) => {
@@ -22,21 +25,24 @@ const handleChange = (event) => {
   } else if (event.target.id === "formProjectDescription") {
     setForm({ ...form, projectDescription: event.target.value });
   } else if (event.target.id === "formProjectCompleted") {
-    setForm({ ...form, projectCompleted: event.target.value });
+    setForm({ ...form, isCompleted: event.target.value });
   }
 };
-
 
   // handleSubmit
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:4000/projects/groupid/6227e59832173adef78ca00b`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+    axios.post(apiUrl + '/projects/groupid/6226dfbb3ba734c3038e64a8', {
+      projectName: form.projectName,
+      projectDescription: form.projectDescription,
+      isCompleted: form.isCompleted
     })
     .catch(() => console.log("why did you break"));
-    setForm("")
+    setForm({
+      projectName: "",
+      projectDescription: "",
+      isCompleted: false
+    })
   };
   
   
@@ -75,7 +81,7 @@ const handleChange = (event) => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={ (event) => {handleSubmit(event); handleClose();}}>Understood</Button>
+          <Button variant="primary" onClick={ (event) => {handleSubmit(event); handleClose();}}>Add</Button>
         </Modal.Footer>
       </Modal>
     </div>
