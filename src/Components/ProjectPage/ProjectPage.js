@@ -6,7 +6,7 @@ console.log(params)
 
   return (
     <div>
-      <h2>I'm a ProjectPage</h2>
+      <h2>I'm a hello</h2>
     </div>
   );
 };
