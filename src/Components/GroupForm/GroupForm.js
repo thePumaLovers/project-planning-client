@@ -1,15 +1,16 @@
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import { useState } from 'react';
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import { useState } from "react";
+import axios from "axios";
+import apiUrl from "../../apiUrl";
 
-const GroupForm = () => {
-
+const GroupForm = ({toggle, setToggle}) => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
-    groupName: "",
+    displayName: "",
     location: "",
-    projects: []
+    projects: [],
   });
 
   const handleClose = () => setShow(false);
@@ -18,18 +19,24 @@ const GroupForm = () => {
   // handleChange
   const handleChange = (event) => {
     event.preventDefault();
-    if (event.target.id === "formGroupName") {
-      setForm({ ...form, groupName: event.target.value });
+    if (event.target.id === "formDisplayName") {
+      setForm({ ...form, displayName: event.target.value });
     } else if (event.target.id === "formLocation") {
       setForm({ ...form, location: event.target.value });
     }
   };
 
-  // handleSubmit
+  // handleSubmit and POST request
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form)
-  }
+    axios.post(apiUrl + '/groups', {
+      displayName: form.displayName,
+      location: form.location,
+      projects: []
+    });
+    setToggle(!toggle);
+
+  };
 
   return (
     <div>
@@ -43,41 +50,39 @@ const GroupForm = () => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3 group-form" controlId="formGroupName">
+            <Form.Group className="mb-3 group-form" controlId="formDisplayName">
               <Form.Label>Group Name</Form.Label>
-              <Form.Control type="input" placeholder="Enter group name" value={form.groupName} onChange={handleChange}/>
+              <Form.Control
+                type="input"
+                placeholder="Enter group name"
+                value={form.groupName}
+                onChange={handleChange}
+              />
             </Form.Group>
-            
+            <Form.Group className="mb-3 group-form" controlId="formLocation">
+              <Form.Label>Location</Form.Label>
+              <Form.Control
+                type="input"
+                placeholder="Enter location of group"
+                value={form.location}
+                onChange={handleChange}
+              />
+            </Form.Group>
           </Form>
-        {/* <Form>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form> */}
         </Modal.Body>
         <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={ (event) => {handleSubmit(event); handleClose();}}>
-              Submit
+          <Button
+            variant="primary"
+            onClick={(event) => {
+              handleSubmit(event);
+              handleClose();
+            }}
+          >
+            Submit
           </Button>
-          
         </Modal.Footer>
       </Modal>
     </div>
@@ -85,37 +90,3 @@ const GroupForm = () => {
 };
 
 export default GroupForm;
-
-
-
-// function Example() {
-//   const [show, setShow] = useState(false);
-
-//   const handleClose = () => setShow(false);
-//   const handleShow = () => setShow(true);
-
-//   return (
-//     <>
-//       <Button variant="primary" onClick={handleShow}>
-//         Launch demo modal
-//       </Button>
-
-//       <Modal show={show} onHide={handleClose}>
-//         <Modal.Header closeButton>
-//           <Modal.Title>Modal heading</Modal.Title>
-//         </Modal.Header>
-//         <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-//         <Modal.Footer>
-//           <Button variant="secondary" onClick={handleClose}>
-//             Close
-//           </Button>
-//           <Button variant="primary" onClick={handleClose}>
-//             Save Changes
-//           </Button>
-//         </Modal.Footer>
-//       </Modal>
-//     </>
-//   );
-// }
-
-// render(<Example />);
