@@ -36,6 +36,7 @@ const handleChange = (event) => {
       body: JSON.stringify(form),
     })
     .catch(() => console.log("why did you break"));
+    setForm("")
   };
   
   
