@@ -6,21 +6,13 @@ import ProjectPage from "./Components/ProjectPage/ProjectPage";
 import TeamPage from "./Components/TeamPage/TeamPage";
 import Footer from "./Components/Footer/Footer";
 
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <nav>
-        <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/groups'>Groups</Link></li>
-          <li><Link to='/projects'>Projects</Link></li>
-          <li><Link to='/team'>Team</Link></li>
-        </ul>
-      </nav>
 
       <main>
         <Routes>
