@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import apiUrl from "../../apiUrl";
 
-const EditGroupForm = ({toggle, setToggle, groupDisplayName, groupLocation}) => {
+const EditGroupForm = ({toggle, setToggle, groupId, groupDisplayName, groupLocation, groupProjects}) => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     displayName: "",
@@ -26,13 +26,13 @@ const EditGroupForm = ({toggle, setToggle, groupDisplayName, groupLocation}) => 
     }
   };
 
-  // handleSubmit and POST request
+  // handleSubmit and PUT request
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(apiUrl + '/groups', {
-      displayName: form.displayName,
-      location: form.location,
-      projects: []
+    axios.put(apiUrl + '/groups/' + groupId, {
+      displayName: form.displayName === '' ? groupDisplayName : form.displayName,
+      location: form.location === '' ? groupLocation : form.location,
+      projects: groupProjects
     });
     setToggle(!toggle);
 
@@ -40,7 +40,7 @@ const EditGroupForm = ({toggle, setToggle, groupDisplayName, groupLocation}) => 
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="secondary" onClick={handleShow}>
         Edit Group
       </Button>
 

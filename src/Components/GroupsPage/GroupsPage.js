@@ -21,14 +21,13 @@ const GroupsPage = () => {
       <div key={index}>
         <h3>{group.displayName}</h3>
         <p>{group.location}</p>
-        <EditGroupForm toggle={toggle} setToggle={setToggle} groupDisplayName={group.displayName} groupLocation={group.location}/>
+        <EditGroupForm toggle={toggle} setToggle={setToggle} groupId={group._id} groupDisplayName={group.displayName} groupLocation={group.location} groupProjects={group.projects} />
         <Button variant="danger" onClick={() => handleDelete(group._id)}>Delete</Button>
         </div>
     )
   })
 
-  // PUT request for group by id
-
+console.log(groups)
 
   // handleDelete
   const handleDelete = (id) => {
