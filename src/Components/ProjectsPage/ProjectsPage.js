@@ -3,7 +3,7 @@ import ProjectForm from "../ProjectForm/ProjectForm";
 const ProjectsPage = () => {
   return (
     <div>
-      <h2>I'm a ProjectsPage</h2>
+      <h2>I'm a Projects Page</h2>
       <ProjectForm />
     </div>
 
