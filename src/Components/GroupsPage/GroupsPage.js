@@ -21,7 +21,7 @@ const GroupsPage = () => {
       <div key={index}>
         <h3>{group.displayName}</h3>
         <p>{group.location}</p>
-        <EditGroupForm toggle={toggle} setToggle={setToggle} />
+        <EditGroupForm toggle={toggle} setToggle={setToggle} groupDisplayName={group.displayName} groupLocation={group.location}/>
         <Button variant="danger" onClick={() => handleDelete(group._id)}>Delete</Button>
         </div>
     )

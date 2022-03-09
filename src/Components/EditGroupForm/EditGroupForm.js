@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import apiUrl from "../../apiUrl";
 
-const EditGroupForm = ({toggle, setToggle}) => {
+const EditGroupForm = ({toggle, setToggle, groupDisplayName, groupLocation}) => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     displayName: "",
@@ -54,7 +54,7 @@ const EditGroupForm = ({toggle, setToggle}) => {
               <Form.Label>Group Name</Form.Label>
               <Form.Control
                 type="input"
-                placeholder="Enter group name"
+                placeholder={groupDisplayName}
                 value={form.groupName}
                 onChange={handleChange}
               />
@@ -63,7 +63,7 @@ const EditGroupForm = ({toggle, setToggle}) => {
               <Form.Label>Location</Form.Label>
               <Form.Control
                 type="input"
-                placeholder="Enter location of group"
+                placeholder={groupLocation}
                 value={form.location}
                 onChange={handleChange}
               />
