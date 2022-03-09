@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import apiUrl from "../../apiUrl";
 
-const GroupForm = ({toggle, setToggle}) => {
+const AddGroupForm = ({toggle, setToggle}) => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     displayName: "",
@@ -89,4 +89,4 @@ const GroupForm = ({toggle, setToggle}) => {
   );
 };
 
-export default GroupForm;
+export default AddGroupForm;
