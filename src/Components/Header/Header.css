@@ -71,6 +71,9 @@ T A B L E T
         width: 100%;
     }
 
+    .me-auto {
+        padding: 0vh;
+    }
 
 }
 
@@ -96,6 +99,10 @@ D E S K T O P
 
     #bottom-link {
         padding: 2vh;
+    }
+
+    .me-auto {
+        padding: 0vh;
     }
     
 }
