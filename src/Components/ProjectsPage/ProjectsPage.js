@@ -1,5 +1,5 @@
 import AddProjectForm from "../AddProjectForm/AddProjectForm";
-
+import EditProjectForm from "../EditProjectForm/EditProjectForm";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import apiUrl from "../../apiUrl";
@@ -21,7 +21,9 @@ const ProjectsPage = () => {
 
   // handleDelete
   const handleDelete = (projectId) => {
-    axios.delete(`${apiUrl}/projects/groupid/${groupProjects._id}/projectid/${projectId}`);
+    axios.delete(
+      `${apiUrl}/projects/groupid/${groupProjects._id}/projectid/${projectId}`
+    );
     setToggle(!toggle);
   };
 
@@ -40,9 +42,9 @@ const ProjectsPage = () => {
     );
   });
 
-  console.log(groupProjects)
   // Mapping projects from selected group to cards
-
+  let groupId = groupProjects._id;
+  console.log(groupId);
   const listProjects = groupProjects.projects?.map((project, index) => {
     return (
       <Container key={index}>
@@ -54,6 +56,15 @@ const ProjectsPage = () => {
               {project.projectDescription}
               {project.isCompleted}
             </Card.Text>
+            <EditProjectForm
+              toggle={toggle}
+              setToggle={setToggle}
+              groupId={groupId}
+              projectId={project._id}
+              projectName={project.projectName}
+              projectDescription={project.projectDescription}
+              isCompleted={project.isCompleted}
+            />
             <Button variant="danger" onClick={() => handleDelete(project._id)}>
               Delete
             </Button>

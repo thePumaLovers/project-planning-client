@@ -1,16 +1,17 @@
 import Modal from "react-bootstrap/Modal";
+import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import axios from "axios";
 import apiUrl from "../../apiUrl";
 
-const EditProjectForm = ({toggle, setToggle, groupId, groupDisplayName, groupLocation, groupProjects}) => {
+const EditProjectForm = ({ toggle, setToggle, groupId, projectId, projectName, projectDescription, isCompleted }) => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     projectName: "",
     projectDescription: "",
-    projectCompleted: ""
+    isCompleted: false,
   });
 
   const handleClose = () => setShow(false);
@@ -19,54 +20,73 @@ const EditProjectForm = ({toggle, setToggle, groupId, groupDisplayName, groupLoc
   // handleChange
   const handleChange = (event) => {
     event.preventDefault();
-    if (event.target.id === "formDisplayName") {
-      setForm({ ...form, displayName: event.target.value });
-    } else if (event.target.id === "formLocation") {
-      setForm({ ...form, location: event.target.value });
-    }
+    if (event.target.id === "formProjectName") {
+      setForm({ ...form, projectName: event.target.value });
+    } else if (event.target.id === "formProjectDescription") {
+      setForm({ ...form, projectDescription: event.target.value });
+    } 
   };
 
-  // handleSubmit and PUT request
+  // handleCheck for the checkbox in the form
+  const handleCheck = (event) => {
+    setForm({...form, isCompleted: event.target.checked})
+  }
+
+  // handleSubmit and POST request
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.put(apiUrl + '/groups/' + groupId, {
-      displayName: form.displayName === '' ? groupDisplayName : form.displayName,
-      location: form.location === '' ? groupLocation : form.location,
-      projects: groupProjects
+    axios.put(`${apiUrl}/projects/groupid/${groupId}/projectid/${projectId}`, {
+      projectName: form.projectName,
+      projectDescription: form.projectDescription,
+      isCompleted: form.isCompleted,
     });
     setToggle(!toggle);
-
   };
 
+  console.log(form)
+
   return (
-    <div>
+    <Container>
       <Button variant="secondary" onClick={handleShow}>
-        Edit Group
+        Edit Project
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Edit Group</Modal.Title>
+          <Modal.Title>Edit Project</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3 group-form" controlId="formDisplayName">
-              <Form.Label>Group Name</Form.Label>
+            <Form.Group className="mb-3 project-form" controlId="formProjectName">
+              <Form.Label>Project Name</Form.Label>
               <Form.Control
                 type="input"
-                placeholder={groupDisplayName}
-                value={form.groupName}
+                placeholder={projectName}
+                value={form.projectName}
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className="mb-3 group-form" controlId="formLocation">
-              <Form.Label>Location</Form.Label>
+            <Form.Group className="mb-3 project-form" controlId="formProjectDescription">
+              <Form.Label>Project Description</Form.Label>
               <Form.Control
                 type="input"
-                placeholder={groupLocation}
-                value={form.location}
+                placeholder={projectDescription}
+                value={form.projectDescription}
                 onChange={handleChange}
               />
+            </Form.Group>
+            <Form.Group className="mb-3 project-form" controlId="formIsCompleted">
+              <Form.Label>Project Completed</Form.Label>
+              {/* <Form.Control
+                type="input"
+                placeholder={isCompleted}
+                value={form.isCompleted}
+                onChange={handleChange}
+              /> */}
+              <Form.Check type="checkbox" 
+              defaultChecked={isCompleted}
+              onClick={handleCheck} />
+
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -85,8 +105,8 @@ const EditProjectForm = ({toggle, setToggle, groupId, groupDisplayName, groupLoc
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </Container>
   );
 };
 
-export default EditGroupForm;
+export default EditProjectForm;
