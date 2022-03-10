@@ -41,13 +41,19 @@ const EditProjectForm = ({
   };
 
   // handleSubmit and PUT request
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axios.put(`${apiUrl}/projects/groupid/${groupId}/projectid/${projectId}`, {
-      projectName: form.projectName === '' ? projectName : form.projectName,
-      projectDescription: form.projectDescription === '' ? projectDescription : form.projectDescription,
-      isCompleted: form.isCompleted,
-    });
+    await axios.put(
+      `${apiUrl}/projects/groupid/${groupId}/projectid/${projectId}`,
+      {
+        projectName: form.projectName === "" ? projectName : form.projectName,
+        projectDescription:
+          form.projectDescription === ""
+            ? projectDescription
+            : form.projectDescription,
+        isCompleted: form.isCompleted,
+      }
+    );
     setToggle(!toggle);
   };
 

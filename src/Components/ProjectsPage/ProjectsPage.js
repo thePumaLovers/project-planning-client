@@ -29,8 +29,8 @@ const ProjectsPage = () => {
   }, [groups]);
 
   // handleDelete
-  const handleDelete = (projectId) => {
-    axios.delete(
+  const handleDelete = async (projectId) => {
+    await axios.delete(
       `${apiUrl}/projects/groupid/${groupProjects._id}/projectid/${projectId}`
     );
     setToggle(!toggle);
@@ -99,7 +99,11 @@ const ProjectsPage = () => {
         <AddProjectForm
           toggle={toggle}
           setToggle={setToggle}
-          groupId={groupProjects._id}/>) : ("")}
+          groupId={groupProjects._id}
+        />
+      ) : (
+        ""
+      )}
 
       {listProjects}
     </div>
