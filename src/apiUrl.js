@@ -4,7 +4,7 @@ let apiUrl;
 if (window.location.hostname === "localhost") {
   apiUrl = "http://localhost:4000";
 } else {
-  apiUrl = "https://glacial-crag-20356.herokuapp.com";
+  apiUrl = "https://stark-basin-09914.herokuapp.com/";
 }
 
 // export api url
