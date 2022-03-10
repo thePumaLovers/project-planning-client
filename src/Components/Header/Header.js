@@ -1,3 +1,4 @@
+import './Header.css'
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -5,30 +6,31 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
-        <Container>
+    <Container className="header">
+      <Navbar bg="dark" expand="lg">
+        <Container className="nav-bar">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Brand>Project Planning</Navbar.Brand>
+          
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Link to="/">
+              <Link className="nav-bar-link" to="/">
                Home
               </Link>
-              <Link to="/groups">
+              <Link className="nav-bar-link" to="/groups">
                 Groups
               </Link>
-              <Link to="/projects">
+              <Link className="nav-bar-link" to="/projects">
                 Projects
               </Link>
-              <Link to="/team">
+              <Link className="nav-bar-link" id="bottom-link" to="/team">
                 Team
               </Link>
             </Nav>
           </Navbar.Collapse>
+          <Navbar.Brand className="brand"><p id="brand-text">Project Planning</p></Navbar.Brand>
         </Container>
       </Navbar>
-    </div>
+    </Container>
   );
 };
 
