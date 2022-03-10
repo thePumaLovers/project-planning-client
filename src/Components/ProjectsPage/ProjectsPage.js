@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 import apiUrl from "../../apiUrl";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
-import ListGroupItem from "react-bootstrap/ListGroupItem";
+import Container from "react-bootstrap/Container";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const ProjectsPage = () => {
@@ -24,11 +23,10 @@ const ProjectsPage = () => {
   const dropdownGroups = groups.map((group, index) => {
     return (
       <Dropdown.Item
-      key={index}
+        key={index}
         role="menuitem"
-        
         onClick={() => {
-          setGroup(group)
+          setGroup(group);
         }}
       >
         {group.displayName}
@@ -36,44 +34,32 @@ const ProjectsPage = () => {
     );
   });
 
-  // Mapping our groups to render on page
-  //const Projects = groups.map();
-  //console.log('projects flat:', Projects)
+  // Mapping projects from selected group to cards
 
-  // const listGroups = groups.map((group, index) => {
-  //   return (
-  //     <div key={index}>
-  //       <Card style={{ width: '18rem' }}>
-  //   <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-  //   <Card.Body>
-  //     <Card.Title>{group.displayName}</Card.Title>
-  //     <Card.Text>
-  //     {group.location}
-  //     </Card.Text>
-  //   </Card.Body>
-  //   <ListGroup className="list-group-flush">
-  //     <ListGroupItem>Cras justo odio</ListGroupItem>
-  //     <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-  //     <ListGroupItem>Vestibulum at eros</ListGroupItem>
-  //   </ListGroup>
-  //   <Card.Body>
-  //   <EditGroupForm toggle={toggle} setToggle={setToggle} groupId={group._id} groupDisplayName={group.displayName} groupLocation={group.location} groupProjects={group.projects} />
-  //       <Button variant="danger" onClick={() => handleDelete(group._id)}>Delete</Button>
-  //   </Card.Body>
-  // </Card>
+  const listProjects = group.projects?.map((project, index) => {
+    return (
+      <Container key={index}>
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src="https://picsum.photos/id/1/286/180" />
+          <Card.Body>
+            <Card.Title>{project.projectName}</Card.Title>
+            <Card.Text>
+              {project.projectDescription}
+              {project.isCompleted}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </Container>
+    );
+  });
 
-  //       </div>
-  //   )
-  // })
-
-  console.log(group);
+  console.log(listProjects);
 
   // handleDelete
   const handleDelete = (id) => {
     axios.delete(apiUrl + "/groups/" + id);
     setToggle(!toggle);
   };
-
 
   return (
     <div>
@@ -84,6 +70,7 @@ const ProjectsPage = () => {
           Dropdown Button
         </Dropdown.Toggle>
         <Dropdown.Menu>{dropdownGroups}</Dropdown.Menu>
+        {listProjects}
       </Dropdown>
     </div>
   );
