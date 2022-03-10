@@ -4,9 +4,9 @@
 
 .landing-page h1{
     color: var(--eagle-green);
-    padding: 2vh;
+    padding: 3vh;
 }
 
 .landing-page p {
-    padding: 2vh 0vh;
+    padding: 2vh 12vh;
 }
