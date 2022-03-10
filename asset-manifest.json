@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/project-planning-client/static/css/main.0d3a7a44.css",
+    "main.js": "/project-planning-client/static/js/main.344c530d.js",
+    "static/js/787.ad5ae6f1.chunk.js": "/project-planning-client/static/js/787.ad5ae6f1.chunk.js",
+    "static/media/videofile.mp4": "/project-planning-client/static/media/videofile.f6dbe76f482e12594f91.mp4",
+    "static/media/mattavatar.png": "/project-planning-client/static/media/mattavatar.e906fc473a65f0af0f15.png",
+    "static/media/juanavatar.png": "/project-planning-client/static/media/juanavatar.a20856b659fedd121edd.png",
+    "static/media/aidynavatar.png": "/project-planning-client/static/media/aidynavatar.370e11260f02ef51fa45.png",
+    "static/media/permanent-marker-all-400-normal.woff": "/project-planning-client/static/media/permanent-marker-all-400-normal.bcbd26ccf4f356052820.woff",
+    "static/media/quicksand-all-400-normal.woff": "/project-planning-client/static/media/quicksand-all-400-normal.2744416b8dcf2110e923.woff",
+    "static/media/rossavatar.png": "/project-planning-client/static/media/rossavatar.9723b8fcedafbe7c442e.png",
+    "static/media/permanent-marker-latin-400-normal.woff2": "/project-planning-client/static/media/permanent-marker-latin-400-normal.bd982c23c848c3486469.woff2",
+    "static/media/quicksand-latin-400-normal.woff2": "/project-planning-client/static/media/quicksand-latin-400-normal.d71cb2a4b837b43bbad5.woff2",
+    "static/media/quicksand-latin-ext-400-normal.woff2": "/project-planning-client/static/media/quicksand-latin-ext-400-normal.7791828d964afa8439da.woff2",
+    "static/media/quicksand-vietnamese-400-normal.woff2": "/project-planning-client/static/media/quicksand-vietnamese-400-normal.5365b00319d96e3bc966.woff2",
+    "index.html": "/project-planning-client/index.html",
+    "main.0d3a7a44.css.map": "/project-planning-client/static/css/main.0d3a7a44.css.map",
+    "main.344c530d.js.map": "/project-planning-client/static/js/main.344c530d.js.map",
+    "787.ad5ae6f1.chunk.js.map": "/project-planning-client/static/js/787.ad5ae6f1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d3a7a44.css",
+    "static/js/main.344c530d.js"
+  ]
+}
