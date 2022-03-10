@@ -11,53 +11,5 @@
     padding: 2vh 12vh;
 }
 
-#video {
-    position: fixed;
-    z-index: -1;
-    width: 100%;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 10vh
-}
 
 
-.animatedDiv {
-    height: 20vh;
-    font-size: 100px;
-    border-radius: 50px
-}
-
-.mainAnimatedDiv {
-    max-height: 100vh;
-    overflow: hidden;
-    
-}
-
-
-.div1 {
-    background-color: #DAD2D8;
-    color: #000000;
-}
-
-.div2 {
-    background-color: #143642;
-    color: #FFFFFF;
-}
-
-.div3 {
-    background-color: #16CDD0;
-}
-
-.div5 {
-    background-color: #EC9A29;
-}
-
-.div4 {
-    background-color: #A8201A;
-    color: #FFFFFF;
-}
-
-.header, .footer {
-    display: none
-}
