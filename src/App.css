@@ -1,4 +1,14 @@
 .App {
+  /* Color Palette Declaration */
+--light-gray: #dad2d8ff;
+--gunmetal: #143642ff;
+--dark-turquoise: #16cdd0ff;
+--carrot-orange: #ec9a29ff;
+--carnelian: #a8201aff;
+--white: #FFFFFF;
+--black: #000000;
+
+
   text-align: center;
 }
 #page-container {
