@@ -1,6 +1,8 @@
 import './TeamPage.css'
 import Accordion from "react-bootstrap/Accordion";
 import Container from "react-bootstrap/Container";
+// import aidynavatar from "../images/aidynavatar.png"
+
 
 const TeamPage = () => {
   return (
@@ -25,7 +27,9 @@ const TeamPage = () => {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="3">
-            <Accordion.Header className="acc-header">Aidyn Hillyard (zie/hir/hirs)</Accordion.Header>
+            <Accordion.Header className="acc-header">
+              {/* <img src={aidynavatar} /> */}
+            Aidyn Hillyard (zie/hir/hirs)</Accordion.Header>
             <Accordion.Body>Hi, I'm Aidyn, an empathetic, full-stack software engineer with a passion for accessibility through creative, user-driven design. My love of learning led me to collaborate with our team to create this project planning app. Sometimes it's tough to turn ideas into reality, but we hope our app will provide a way for you to take that first step in reaching your project goals!
             </Accordion.Body>
           </Accordion.Item>
