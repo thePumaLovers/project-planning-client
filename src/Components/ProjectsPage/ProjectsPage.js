@@ -54,7 +54,7 @@ const ProjectsPage = () => {
 
   // Mapping projects from selected group to cards
   let groupId = groupProjects._id;
-  console.log(groupId);
+
   const listProjects = groupProjects.projects?.map((project, index) => {
     return (
       <Container key={index}>
