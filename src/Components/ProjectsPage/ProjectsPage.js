@@ -19,6 +19,12 @@ const ProjectsPage = () => {
     setGroups(response.data.groups);
   }, [toggle]);
 
+  // handleDelete
+  const handleDelete = (projectId) => {
+    axios.delete(`${apiUrl}/projects/groupid/${groupProjects._id}/projectid/${projectId}`);
+    setToggle(!toggle);
+  };
+
   // Filling out dropdown menu with groups
   const dropdownGroups = groups.map((group, index) => {
     return (
@@ -34,6 +40,7 @@ const ProjectsPage = () => {
     );
   });
 
+  console.log(groupProjects)
   // Mapping projects from selected group to cards
 
   const listProjects = groupProjects.projects?.map((project, index) => {
@@ -47,19 +54,14 @@ const ProjectsPage = () => {
               {project.projectDescription}
               {project.isCompleted}
             </Card.Text>
+            <Button variant="danger" onClick={() => handleDelete(project._id)}>
+              Delete
+            </Button>
           </Card.Body>
         </Card>
       </Container>
     );
   });
-
-  console.log(listProjects);
-
-  // handleDelete
-  const handleDelete = (id) => {
-    axios.delete(apiUrl + "/groups/" + id);
-    setToggle(!toggle);
-  };
 
   return (
     <div>
