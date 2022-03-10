@@ -5,12 +5,12 @@ import { useState } from "react";
 import axios from "axios";
 import apiUrl from "../../apiUrl";
 
-const EditGroupForm = ({toggle, setToggle, groupId, groupDisplayName, groupLocation, groupProjects}) => {
+const EditProjectForm = ({toggle, setToggle, groupId, groupDisplayName, groupLocation, groupProjects}) => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
-    displayName: "",
-    location: "",
-    projects: [],
+    projectName: "",
+    projectDescription: "",
+    projectCompleted: ""
   });
 
   const handleClose = () => setShow(false);
