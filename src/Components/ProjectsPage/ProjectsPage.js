@@ -1,5 +1,5 @@
-import AddGroupForm from "../AddGroupForm/AddGroupForm";
-import EditGroupForm from "../EditGroupForm/EditGroupForm";
+import AddProjectForm from "../AddProjectForm/AddProjectForm";
+
 import axios from "axios";
 import { useState, useEffect } from "react";
 import apiUrl from "../../apiUrl";
@@ -64,14 +64,18 @@ const ProjectsPage = () => {
   return (
     <div>
       <h2>I'm a Projects Page</h2>
-      <AddGroupForm toggle={toggle} setToggle={setToggle} />
+      
+     
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
           Dropdown Button
         </Dropdown.Toggle>
         <Dropdown.Menu>{dropdownGroups}</Dropdown.Menu>
-        {listProjects}
       </Dropdown>
+      <AddProjectForm toggle={toggle} setToggle={setToggle} /> 
+
+      {listProjects}
+     
     </div>
   );
 };
