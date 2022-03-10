@@ -1,16 +1,17 @@
 import Modal from "react-bootstrap/Modal";
+import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import axios from "axios";
 import apiUrl from "../../apiUrl";
 
-const AddGroupForm = ({toggle, setToggle}) => {
+const AddProjectForm = ({ toggle, setToggle, groupId }) => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
-    displayName: "",
-    location: "",
-    projects: [],
+    projectName: "",
+    projectDescription: "",
+    isCompleted: false,
   });
 
   const handleClose = () => setShow(false);
@@ -19,52 +20,51 @@ const AddGroupForm = ({toggle, setToggle}) => {
   // handleChange
   const handleChange = (event) => {
     event.preventDefault();
-    if (event.target.id === "formDisplayName") {
-      setForm({ ...form, displayName: event.target.value });
-    } else if (event.target.id === "formLocation") {
-      setForm({ ...form, location: event.target.value });
+    if (event.target.id === "formProjectName") {
+      setForm({ ...form, projectName: event.target.value });
+    } else if (event.target.id === "formProjectDescription") {
+      setForm({ ...form, projectDescription: event.target.value });
     }
   };
 
   // handleSubmit and POST request
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(apiUrl + '/groups', {
-      displayName: form.displayName,
-      location: form.location,
-      projects: []
+    axios.post(apiUrl + "/projects/groupid/" + groupId, {
+      projectName: form.projectName,
+      projectDescription: form.projectDescription,
+      isCompleted: false,
     });
     setToggle(!toggle);
-
   };
 
   return (
-    <div>
+    <Container>
       <Button variant="primary" onClick={handleShow}>
-        Add a Group
+        Add New Project
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add New Group</Modal.Title>
+          <Modal.Title>Add New Project</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3 group-form" controlId="formDisplayName">
-              <Form.Label>Group Name</Form.Label>
+            <Form.Group className="mb-3 project-form" controlId="formProjectName">
+              <Form.Label>Project Name</Form.Label>
               <Form.Control
                 type="input"
-                placeholder="Enter group name"
-                value={form.groupName}
+                placeholder="Enter project name"
+                value={form.projectName}
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className="mb-3 group-form" controlId="formLocation">
-              <Form.Label>Location</Form.Label>
+            <Form.Group className="mb-3 project-form" controlId="formProjectDescription">
+              <Form.Label>Project Description </Form.Label>
               <Form.Control
                 type="input"
-                placeholder="Enter location of group"
-                value={form.location}
+                placeholder="Enter description of project"
+                value={form.projectDescription}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -85,8 +85,8 @@ const AddGroupForm = ({toggle, setToggle}) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </Container>
   );
 };
 
-export default AddGroupForm;
+export default AddProjectForm;
