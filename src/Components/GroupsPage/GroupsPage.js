@@ -46,8 +46,8 @@ const GroupsPage = () => {
   });
 
   // handleDelete
-  const handleDelete = (id) => {
-    axios.delete(apiUrl + "/groups/" + id);
+  const handleDelete = async (id) => {
+   await axios.delete(apiUrl + "/groups/" + id);
     setToggle(!toggle);
   };
 
