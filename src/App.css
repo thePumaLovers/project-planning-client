@@ -25,10 +25,12 @@ body {
 
 h1 {
   font-family: "Permanent Marker";
+  color: var(--eagle-green)
 }
 
 h2 {
   font-family: "Permanent Marker";
+  color: var(--eagle-green)
 }
 
 @media (min-width: 1px) {

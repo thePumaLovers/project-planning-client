@@ -1,9 +1,8 @@
 .footer {
     background-color: var(--dark-turquoise);
-    
-    /* padding: 1.3vh; */
 }
 
 .footer p {
     color: var(--black);
+    padding: 1vh;
 }
