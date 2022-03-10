@@ -7,29 +7,6 @@
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: var(--gunmetal);
-    color: var(--white)
-}
-
-
-/*
-*************
-T A B L E T
-*************
-*/
-
-@media only screen and (min-width: 768px) {
-   
-
-}
-
-/*
-*************
-D E S K T O P
-*************
-*/
-
-@media only screen and (min-width: 1024px) {
-    
-    
+    background-color: var(--lighter-carrot-orange);
+    color: var(--black)
 }

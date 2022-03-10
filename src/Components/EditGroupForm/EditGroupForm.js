@@ -41,7 +41,7 @@ const EditGroupForm = ({toggle, setToggle, groupId, groupDisplayName, groupLocat
   return (
     <div>
       <Button variant="secondary" onClick={handleShow}>
-        Edit Group
+        Edit
       </Button>
 
       <Modal show={show} onHide={handleClose}>

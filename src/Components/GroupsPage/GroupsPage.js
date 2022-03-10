@@ -1,14 +1,17 @@
+import "./GroupsPage.css";
 import AddGroupForm from "../AddGroupForm/AddGroupForm";
 import EditGroupForm from "../EditGroupForm/EditGroupForm";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import apiUrl from "../../apiUrl";
-import Button from 'react-bootstrap/Button'
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Card from "react-bootstrap/Card";
 
 const GroupsPage = () => {
   const [groups, setGroups] = useState([]);
-  const [toggle, setToggle] = useState(true)
-  
+  const [toggle, setToggle] = useState(true);
+
   // GET request for all groups
   useEffect(async () => {
     const response = await axios.get(apiUrl + "/groups");
@@ -18,30 +21,42 @@ const GroupsPage = () => {
   // Mapping our groups to render on page
   const listGroups = groups.map((group, index) => {
     return (
-      <div key={index}>
-        <h3>{group.displayName}</h3>
-        <p>{group.location}</p>
-        <EditGroupForm toggle={toggle} setToggle={setToggle} groupId={group._id} groupDisplayName={group.displayName} groupLocation={group.location} groupProjects={group.projects} />
-        <Button variant="danger" onClick={() => handleDelete(group._id)}>Delete</Button>
-        </div>
-    )
-  })
-
-console.log(groups)
+      <Container key={index}>
+        <Card className="card" style={{ width: "18rem" }}>
+          <Card.Img variant="top" src="https://picsum.photos/id/1/286/180" />
+          <Card.Body>
+            <Card.Title>{group.displayName}</Card.Title>
+            <Card.Text>{group.location}</Card.Text>
+            <div className="edit-del-btns"><EditGroupForm
+              toggle={toggle}
+              setToggle={setToggle}
+              groupId={group._id}
+              groupDisplayName={group.displayName}
+              groupLocation={group.location}
+              groupProjects={group.projects}
+            />
+            <Button variant="danger" onClick={() => handleDelete(group._id)}>
+              Delete
+            </Button>
+            </div>
+          </Card.Body>
+        </Card>
+      </Container>
+    );
+  });
 
   // handleDelete
   const handleDelete = (id) => {
-    axios.delete(apiUrl + '/groups/' + id )
-    setToggle(!toggle)
-  }
+    axios.delete(apiUrl + "/groups/" + id);
+    setToggle(!toggle);
+  };
 
-console.log(groups)
   return (
-    <div>
-      <h2>I'm a GroupsPage</h2>
+    <Container>
+      <h2 className="groups-title">Groups</h2>
       <AddGroupForm toggle={toggle} setToggle={setToggle} />
       {listGroups}
-    </div>
+    </Container>
   );
 };
 
