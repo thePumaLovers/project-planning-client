@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Dropdown from "react-bootstrap/Dropdown";
-import './ProjectsPage.css'
+import "./ProjectsPage.css";
 
 const ProjectsPage = () => {
   const [groups, setGroups] = useState([]);
