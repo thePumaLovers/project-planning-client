@@ -27,7 +27,6 @@ const ProjectsPage = () => {
       }
     }
   }, [groups]);
-  
 
   // handleDelete
   const handleDelete = (projectId) => {
@@ -90,15 +89,17 @@ const ProjectsPage = () => {
 
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Dropdown Button
+          {groupProjects.displayName
+            ? groupProjects.displayName
+            : "Pick a Group"}
         </Dropdown.Toggle>
         <Dropdown.Menu>{dropdownGroups}</Dropdown.Menu>
       </Dropdown>
-      <AddProjectForm
-        toggle={toggle}
-        setToggle={setToggle}
-        groupId={groupProjects._id}
-      />
+      {groupProjects.displayName ? (
+        <AddProjectForm
+          toggle={toggle}
+          setToggle={setToggle}
+          groupId={groupProjects._id}/>) : ("")}
 
       {listProjects}
     </div>
