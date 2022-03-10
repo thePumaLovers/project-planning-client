@@ -6,6 +6,12 @@
     padding: 0vh 2vh;
 }
 
+.accordion-button:not(.collapsed) {
+    background-color: var(--gunmetal);
+    color: var(--white)
+}
+
+
 /*
 *************
 T A B L E T
@@ -13,11 +19,7 @@ T A B L E T
 */
 
 @media only screen and (min-width: 768px) {
-    #page-container {
-        margin: 0 auto;
-        width: 100%;
-    }
-
+   
 
 }
 
@@ -28,21 +30,6 @@ D E S K T O P
 */
 
 @media only screen and (min-width: 1024px) {
-    .nav-bar-link {
-        padding: 2vh 2vh;
-    }
-
-    #brand-text {
-        display: inline;
-    }
-
-    #page-container {
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    #bottom-link {
-        padding: 2vh;
-    }
+    
     
 }
