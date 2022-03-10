@@ -6,7 +6,15 @@ import { useState } from "react";
 import axios from "axios";
 import apiUrl from "../../apiUrl";
 
-const EditProjectForm = ({ toggle, setToggle, groupId, projectId, projectName, projectDescription, isCompleted }) => {
+const EditProjectForm = ({
+  toggle,
+  setToggle,
+  groupId,
+  projectId,
+  projectName,
+  projectDescription,
+  isCompleted,
+}) => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     projectName: "",
@@ -24,26 +32,33 @@ const EditProjectForm = ({ toggle, setToggle, groupId, projectId, projectName, p
       setForm({ ...form, projectName: event.target.value });
     } else if (event.target.id === "formProjectDescription") {
       setForm({ ...form, projectDescription: event.target.value });
-    } 
+    }
   };
 
   // handleCheck for the checkbox in the form
   const handleCheck = (event) => {
-    setForm({...form, isCompleted: event.target.checked})
-  }
+    setForm({ ...form, isCompleted: event.target.checked });
+  };
 
-  // handleSubmit and POST request
+  // handleSubmit and PUT request
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.put(`${apiUrl}/projects/groupid/${groupId}/projectid/${projectId}`, {
-      projectName: form.projectName,
-      projectDescription: form.projectDescription,
+      projectName: form.projectName === '' ? projectName : form.projectName,
+      projectDescription: form.projectDescription === '' ? projectDescription : form.projectDescription,
       isCompleted: form.isCompleted,
     });
     setToggle(!toggle);
   };
 
-  console.log(form)
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   axios.put(apiUrl + '/groups/' + groupId, {
+  //     displayName: form.displayName === '' ? groupDisplayName : form.displayName,
+  //     location: form.location === '' ? groupLocation : form.location,
+  //     projects: groupProjects
+  //   });
+  //   setToggle(!toggle);
 
   return (
     <Container>
@@ -57,7 +72,10 @@ const EditProjectForm = ({ toggle, setToggle, groupId, projectId, projectName, p
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3 project-form" controlId="formProjectName">
+            <Form.Group
+              className="mb-3 project-form"
+              controlId="formProjectName"
+            >
               <Form.Label>Project Name</Form.Label>
               <Form.Control
                 type="input"
@@ -66,7 +84,10 @@ const EditProjectForm = ({ toggle, setToggle, groupId, projectId, projectName, p
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className="mb-3 project-form" controlId="formProjectDescription">
+            <Form.Group
+              className="mb-3 project-form"
+              controlId="formProjectDescription"
+            >
               <Form.Label>Project Description</Form.Label>
               <Form.Control
                 type="input"
@@ -75,18 +96,17 @@ const EditProjectForm = ({ toggle, setToggle, groupId, projectId, projectName, p
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className="mb-3 project-form" controlId="formIsCompleted">
+            <Form.Group
+              className="mb-3 project-form"
+              controlId="formIsCompleted"
+            >
               <Form.Label>Project Completed</Form.Label>
-              {/* <Form.Control
-                type="input"
-                placeholder={isCompleted}
-                value={form.isCompleted}
-                onChange={handleChange}
-              /> */}
-              <Form.Check type="checkbox" 
-              defaultChecked={isCompleted}
-              onClick={handleCheck} />
 
+              <Form.Check
+                type="checkbox"
+                defaultChecked={isCompleted}
+                onClick={handleCheck}
+              />
             </Form.Group>
           </Form>
         </Modal.Body>
