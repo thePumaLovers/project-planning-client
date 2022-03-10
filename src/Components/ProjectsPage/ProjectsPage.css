@@ -2,14 +2,14 @@
     padding: 3vh 0vh 1vh 0vh;
 }
 
-.btn-primary {
+#dropdown-basic {
     background-color: var(--dark-turquoise);
     color: var(--black);
     border-color: var(--darker-turquoise);
     margin: 2vh 0vh 2vh 0vh;
 }
 
-.btn-primary:hover {
+#dropdown-basic:hover {
     background-color: var(--lighter-turquoise);
     color: var(--black);
     border-color: var(--dark-turquoise);
