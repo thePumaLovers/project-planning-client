@@ -10,7 +10,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 const ProjectsPage = () => {
   const [groups, setGroups] = useState([]);
-  const [group, setGroup] = useState({});
+  const [groupProjects, setGroupProjects] = useState({});
   const [toggle, setToggle] = useState(true);
 
   // GET request for all groups
@@ -26,7 +26,7 @@ const ProjectsPage = () => {
         key={index}
         role="menuitem"
         onClick={() => {
-          setGroup(group);
+          setGroupProjects(group);
         }}
       >
         {group.displayName}
@@ -36,7 +36,7 @@ const ProjectsPage = () => {
 
   // Mapping projects from selected group to cards
 
-  const listProjects = group.projects?.map((project, index) => {
+  const listProjects = groupProjects.projects?.map((project, index) => {
     return (
       <Container key={index}>
         <Card style={{ width: "18rem" }}>
@@ -64,18 +64,20 @@ const ProjectsPage = () => {
   return (
     <div>
       <h2>I'm a Projects Page</h2>
-      
-     
+
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
           Dropdown Button
         </Dropdown.Toggle>
         <Dropdown.Menu>{dropdownGroups}</Dropdown.Menu>
       </Dropdown>
-      <AddProjectForm toggle={toggle} setToggle={setToggle} /> 
+      <AddProjectForm
+        toggle={toggle}
+        setToggle={setToggle}
+        groupId={groupProjects._id}
+      />
 
       {listProjects}
-     
     </div>
   );
 };

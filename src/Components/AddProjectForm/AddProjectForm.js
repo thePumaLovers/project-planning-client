@@ -6,7 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import apiUrl from "../../apiUrl";
 
-const AddProjectForm = ({ toggle, setToggle }) => {
+const AddProjectForm = ({ toggle, setToggle, groupId }) => {
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     projectName: "",
@@ -30,7 +30,7 @@ const AddProjectForm = ({ toggle, setToggle }) => {
   // handleSubmit and POST request
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(apiUrl + "/projects", {
+    axios.post(apiUrl + "/projects/groupid/" + groupId, {
       projectName: form.projectName,
       projectDescription: form.projectDescription,
       isCompleted: false,
