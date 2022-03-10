@@ -47,8 +47,7 @@ const TeamPage = () => {
           <Card.Body>
             <Card.Title>Ross Carnegie</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+            Hi I’m Ross. I’m a software engineer with an interest in empowering people. Software isn’t just about lines of code on a computer it’s about how those lines of code shape the world around it. l I really love the moment where you take this dream or idea, you look at what you need, how much it costs, the materials involved and say: I can do this. Its manageable. It’s possible. It’s that awesome moment where a dream becomes a plan. I hope our app helps you get there.
             </Card.Text>
           </Card.Body>
         </Card>
