@@ -28,9 +28,9 @@ const AddProjectForm = ({ toggle, setToggle, groupId }) => {
   };
 
   // handleSubmit and POST request
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axios.post(apiUrl + "/projects/groupid/" + groupId, {
+    await axios.post(apiUrl + "/projects/groupid/" + groupId, {
       projectName: form.projectName,
       projectDescription: form.projectDescription,
       isCompleted: false,
@@ -50,7 +50,10 @@ const AddProjectForm = ({ toggle, setToggle, groupId }) => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3 project-form" controlId="formProjectName">
+            <Form.Group
+              className="mb-3 project-form"
+              controlId="formProjectName"
+            >
               <Form.Label>Project Name</Form.Label>
               <Form.Control
                 type="input"
@@ -59,7 +62,10 @@ const AddProjectForm = ({ toggle, setToggle, groupId }) => {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Form.Group className="mb-3 project-form" controlId="formProjectDescription">
+            <Form.Group
+              className="mb-3 project-form"
+              controlId="formProjectDescription"
+            >
               <Form.Label>Project Description </Form.Label>
               <Form.Control
                 type="input"

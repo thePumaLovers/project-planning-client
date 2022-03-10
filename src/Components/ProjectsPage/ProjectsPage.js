@@ -19,9 +19,18 @@ const ProjectsPage = () => {
     setGroups(response.data.groups);
   }, [toggle]);
 
+  // Second useEffect
+  useEffect(() => {
+    for (let i = 0; i < groups.length; i++) {
+      if (groupId === groups[i]._id) {
+        setGroupProjects(groups[i]);
+      }
+    }
+  }, [groups]);
+
   // handleDelete
-  const handleDelete = (projectId) => {
-    axios.delete(
+  const handleDelete = async (projectId) => {
+    await axios.delete(
       `${apiUrl}/projects/groupid/${groupProjects._id}/projectid/${projectId}`
     );
     setToggle(!toggle);
@@ -80,15 +89,21 @@ const ProjectsPage = () => {
 
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Dropdown Button
+          {groupProjects.displayName
+            ? groupProjects.displayName
+            : "Pick a Group"}
         </Dropdown.Toggle>
         <Dropdown.Menu>{dropdownGroups}</Dropdown.Menu>
       </Dropdown>
-      <AddProjectForm
-        toggle={toggle}
-        setToggle={setToggle}
-        groupId={groupProjects._id}
-      />
+      {groupProjects.displayName ? (
+        <AddProjectForm
+          toggle={toggle}
+          setToggle={setToggle}
+          groupId={groupProjects._id}
+        />
+      ) : (
+        ""
+      )}
 
       {listProjects}
     </div>
