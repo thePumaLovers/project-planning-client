@@ -1,11 +1,16 @@
 .App {
   /* Color Palette Declaration */
-  --light-gray: #dad2d8ff;
-  --gunmetal: #143642ff;
+  --light-gray: #dad2d8;
+  --gunmetal: #143642;
   --eagle-green: #1e5062;
-  --dark-turquoise: #16cdd0ff;
-  --carrot-orange: #ec9a29ff;
-  --carnelian: #a8201aff;
+  --darker-turquoise: #119fa2; /* two steps down for button outline */
+  --dark-turquoise: #16cdd0;
+  --lighter-turquoise: #46e9ec; /* three steps up for button hover */
+  --darker-carrot-orange: #d38312; /* two steps down for button outline */
+  --carrot-orange: #ec9a29;
+  --lighter-carrot-orange: #f1b25b; /* three steps up for button hover */
+  --darker-carnelian: #841a15; /* two steps down for button outline */
+  --carnelian: #a8201a;
   --white: #ffffff;
   --black: #000000;
 

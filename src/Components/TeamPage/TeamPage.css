@@ -1,0 +1,12 @@
+.team-title {
+    padding: 3vh 0vh 1vh 0vh;
+}
+
+.team-explanation {
+    padding: 0vh 2vh;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--lighter-carrot-orange);
+    color: var(--black)
+}
