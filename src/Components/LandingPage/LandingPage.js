@@ -1,9 +1,11 @@
+import './LandingPage.css'
+import Container from 'react-bootstrap/Container';
 const LandingPage = () => {
   return (
-    <div>
-      <h2>I'm a LandingPage</h2>
+    <Container className="landing-page">
+      <h1>Project Planning Gurus</h1>
       <p>This is an app for planning projects. Weird!</p>
-    </div>
+    </Container>
   );
 };
 

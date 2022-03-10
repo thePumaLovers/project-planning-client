@@ -1,4 +1,33 @@
 .App {
+  /* Color Palette Declaration */
+--light-gray: #dad2d8ff;
+--gunmetal: #143642ff;
+--dark-turquoise: #16cdd0ff;
+--carrot-orange: #ec9a29ff;
+--carnelian: #a8201aff;
+--white: #FFFFFF;
+--black: #000000;
+
+
   text-align: center;
 }
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+
+
+
+
 
