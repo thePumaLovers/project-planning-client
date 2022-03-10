@@ -19,6 +19,16 @@ const ProjectsPage = () => {
     setGroups(response.data.groups);
   }, [toggle]);
 
+  // Second useEffect
+  useEffect(() => {
+    for (let i = 0; i < groups.length; i++) {
+      if (groupId === groups[i]._id) {
+        setGroupProjects(groups[i]);
+      }
+    }
+  }, [groups]);
+  
+
   // handleDelete
   const handleDelete = (projectId) => {
     axios.delete(
