@@ -18,10 +18,10 @@ function App() {
 
         <main>
           <Routes>
-            <Route path="/" element={<LandingPage />}></Route>
-            <Route path="/groups" element={<GroupsPage />}></Route>
-            <Route path="/projects" element={<ProjectsPage />}></Route>
-            <Route path="/team" element={<TeamPage />}></Route>
+            <Route path="/project-planning-client/" element={<LandingPage />}></Route>
+            <Route path="/project-planning-client/groups" element={<GroupsPage />}></Route>
+            <Route path="/project-planning-client/projects" element={<ProjectsPage />}></Route>
+            <Route path="/project-planning-client/team" element={<TeamPage />}></Route>
           </Routes>
         </main>
       </Container>
