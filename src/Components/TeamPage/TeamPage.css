@@ -10,3 +10,15 @@
     background-color: var(--lighter-carrot-orange);
     color: var(--black)
 }
+
+img {
+    max-width: 80px;
+    padding: 0.1vh;
+    margin: 0vh 1.5vh 0vh 0vh;
+}
+
+.acc-pic-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
