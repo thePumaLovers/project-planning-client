@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/project-planning-client/static/css/main.0d3a7a44.css",
-    "main.js": "/project-planning-client/static/js/main.ce696ea2.js",
+    "main.js": "/project-planning-client/static/js/main.bafddbb5.js",
     "static/js/787.ad5ae6f1.chunk.js": "/project-planning-client/static/js/787.ad5ae6f1.chunk.js",
     "static/media/videofile.mp4": "/project-planning-client/static/media/videofile.f6dbe76f482e12594f91.mp4",
     "static/media/mattavatar.png": "/project-planning-client/static/media/mattavatar.e906fc473a65f0af0f15.png",
@@ -16,11 +16,11 @@
     "static/media/quicksand-vietnamese-400-normal.woff2": "/project-planning-client/static/media/quicksand-vietnamese-400-normal.5365b00319d96e3bc966.woff2",
     "index.html": "/project-planning-client/index.html",
     "main.0d3a7a44.css.map": "/project-planning-client/static/css/main.0d3a7a44.css.map",
-    "main.ce696ea2.js.map": "/project-planning-client/static/js/main.ce696ea2.js.map",
+    "main.bafddbb5.js.map": "/project-planning-client/static/js/main.bafddbb5.js.map",
     "787.ad5ae6f1.chunk.js.map": "/project-planning-client/static/js/787.ad5ae6f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0d3a7a44.css",
-    "static/js/main.ce696ea2.js"
+    "static/js/main.bafddbb5.js"
   ]
 }
