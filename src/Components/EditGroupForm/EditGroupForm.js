@@ -27,9 +27,9 @@ const EditGroupForm = ({toggle, setToggle, groupId, groupDisplayName, groupLocat
   };
 
   // handleSubmit and PUT request
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axios.put(apiUrl + '/groups/' + groupId, {
+    await axios.put(apiUrl + '/groups/' + groupId, {
       displayName: form.displayName === '' ? groupDisplayName : form.displayName,
       location: form.location === '' ? groupLocation : form.location,
       projects: groupProjects

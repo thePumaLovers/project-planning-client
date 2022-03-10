@@ -27,9 +27,9 @@ const AddGroupForm = ({toggle, setToggle}) => {
   };
 
   // handleSubmit and POST request
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axios.post(apiUrl + '/groups', {
+   await axios.post(apiUrl + '/groups', {
       displayName: form.displayName,
       location: form.location,
       projects: []

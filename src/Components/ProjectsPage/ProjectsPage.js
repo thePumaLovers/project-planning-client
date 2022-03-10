@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Dropdown from "react-bootstrap/Dropdown";
+import "./ProjectsPage.css";
 
 const ProjectsPage = () => {
   const [groups, setGroups] = useState([]);
@@ -85,7 +86,7 @@ const ProjectsPage = () => {
 
   return (
     <div>
-      <h2>I'm a Projects Page</h2>
+      <h2 className="projects-title">Projects</h2>
 
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
