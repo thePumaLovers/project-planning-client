@@ -7,6 +7,8 @@ import Footer from "./Components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Container from "react-bootstrap/Container";
+import "@fontsource/permanent-marker";
+import "@fontsource/quicksand";
 
 function App() {
   return (

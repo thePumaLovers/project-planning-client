@@ -18,6 +18,19 @@
   margin: 0 auto;
 }
 
+body {
+  font-family: "Quicksand";
+  font-weight: 500;
+}
+
+h1 {
+  font-family: "Permanent Marker";
+}
+
+h2 {
+  font-family: "Permanent Marker";
+}
+
 @media (min-width: 1px) {
   .container {
     max-width: 100%;
