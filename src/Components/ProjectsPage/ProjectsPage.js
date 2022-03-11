@@ -8,6 +8,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Dropdown from "react-bootstrap/Dropdown";
 import "./ProjectsPage.css";
+import plants from '../../images/plants.jpg'
 
 const ProjectsPage = () => {
   const [groups, setGroups] = useState([]);
@@ -61,14 +62,14 @@ const ProjectsPage = () => {
     return (
       <Container key={index}>
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="https://picsum.photos/id/1/286/180" />
+          <Card.Img variant="top" src={plants} />
           <Card.Body>
             <Card.Title>{project.projectName}</Card.Title>
             <Card.Text>
               {project.projectDescription}
               {project.isCompleted}
             </Card.Text>
-            <EditProjectForm
+            <div className="edit-del-btns"><EditProjectForm
               toggle={toggle}
               setToggle={setToggle}
               groupId={groupId}
@@ -79,7 +80,7 @@ const ProjectsPage = () => {
             />
             <Button variant="danger" onClick={() => handleDelete(project._id)}>
               Delete
-            </Button>
+            </Button></div>
           </Card.Body>
         </Card>
       </Container>

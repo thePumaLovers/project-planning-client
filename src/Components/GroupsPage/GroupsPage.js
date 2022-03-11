@@ -7,6 +7,7 @@ import apiUrl from "../../apiUrl";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
+import typing from '../../images/typing.jpg'
 
 const GroupsPage = () => {
   const [groups, setGroups] = useState([]);
@@ -23,7 +24,7 @@ const GroupsPage = () => {
     return (
       <Container key={index}>
         <Card className="card" style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="https://picsum.photos/id/1/286/180" />
+          <Card.Img variant="top" src={typing} />
           <Card.Body>
             <Card.Title>{group.displayName}</Card.Title>
             <Card.Text>{group.location}</Card.Text>
