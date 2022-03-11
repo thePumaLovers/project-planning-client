@@ -1,32 +1,32 @@
 .team-title {
-    padding: 3vh 0vh 1vh 0vh;
+  padding: 3vh 0vh 1vh 0vh;
 }
 
 .team-explanation {
-    padding: 0vh 2vh;
+  padding: 0vh 2vh;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: var(--lighter-carrot-orange);
-    color: var(--black)
+  background-color: var(--lighter-carrot-orange);
+  color: var(--black);
 }
 
 .avatar {
-    max-width: 80px;
-    padding: 0.1vh;
-    margin: 0vh 1.5vh 0vh 0vh;
+  max-width: 80px;
+  padding: 0.1vh;
+  margin: 0vh 1.5vh 0vh 0vh;
 }
 
 .acc-pic-name {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .puma-logo {
-    max-width: 200px;
+  max-width: 200px;
 }
 
 .accordion-body {
-    text-align: left;
+  text-align: left;
 }

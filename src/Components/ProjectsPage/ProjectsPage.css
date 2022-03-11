@@ -1,57 +1,57 @@
 .projects-title {
-    padding: 3vh 0vh 1vh 0vh;
+  padding: 3vh 0vh 1vh 0vh;
 }
 
 #dropdown-basic {
-    background-color: var(--dark-turquoise);
-    color: var(--black);
-    border-color: var(--darker-turquoise);
-    margin: 2vh 0vh 2vh 0vh;
+  background-color: var(--dark-turquoise);
+  color: var(--black);
+  border-color: var(--darker-turquoise);
+  margin: 2vh 0vh 2vh 0vh;
 }
 
 #dropdown-basic:hover {
-    background-color: var(--lighter-turquoise);
-    color: var(--black);
-    border-color: var(--dark-turquoise);
+  background-color: var(--lighter-turquoise);
+  color: var(--black);
+  border-color: var(--dark-turquoise);
 }
 
 .btn-primary {
-    background-color: var(--dark-turquoise);
-    color: var(--black);
-    border-color: var(--darker-turquoise);
-    margin: 2vh 0vh 2vh 0vh;
+  background-color: var(--dark-turquoise);
+  color: var(--black);
+  border-color: var(--darker-turquoise);
+  margin: 2vh 0vh 2vh 0vh;
 }
 
 .btn-primary:hover {
-    background-color: var(--lighter-turquoise);
-    color: var(--black);
-    border-color: var(--dark-turquoise);
+  background-color: var(--lighter-turquoise);
+  color: var(--black);
+  border-color: var(--dark-turquoise);
 }
 
 .btn-secondary {
-    background-color: var(--carrot-orange);
-    color: var(--black);
-    border-color: var(--darker-carrot-orange);
+  background-color: var(--carrot-orange);
+  color: var(--black);
+  border-color: var(--darker-carrot-orange);
 }
 
 .btn-secondary:hover {
-    background-color: var(--lighter-carrot-orange);
-    color: var(--black);
-    border-color: var(--carrot-orange);
+  background-color: var(--lighter-carrot-orange);
+  color: var(--black);
+  border-color: var(--carrot-orange);
 }
 
 .btn-danger {
-    background-color: var(--carnelian);
-    color: var(--white);
-    border-color: var(--darker-carnelian);
-    margin: 0vh 1vh;
+  background-color: var(--carnelian);
+  color: var(--white);
+  border-color: var(--darker-carnelian);
+  margin: 0vh 1vh;
 }
 
 .card {
-    margin: 2vh auto;
+  margin: 2vh auto;
 }
 
 .edit-del-btns {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }

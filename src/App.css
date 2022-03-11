@@ -25,12 +25,12 @@ body {
 
 h1 {
   font-family: "Permanent Marker";
-  color: var(--eagle-green)
+  color: var(--eagle-green);
 }
 
 h2 {
   font-family: "Permanent Marker";
-  color: var(--eagle-green)
+  color: var(--eagle-green);
 }
 
 @media (min-width: 1px) {
@@ -58,5 +58,4 @@ h2 {
   width: 100%;
   height: 2.5rem; /* Footer height */
   background-color: var(--dark-turquoise);
-  
 }

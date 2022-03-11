@@ -1,15 +1,16 @@
 import "./GroupsPage.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import apiUrl from "../../apiUrl";
 import AddGroupForm from "../AddGroupForm/AddGroupForm";
 import EditGroupForm from "../EditGroupForm/EditGroupForm";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import apiUrl from "../../apiUrl";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
-import typing from '../../images/typing.jpg'
+import typing from "../../images/typing.jpg";
 
 const GroupsPage = () => {
+  // useStates
   const [groups, setGroups] = useState([]);
   const [toggle, setToggle] = useState(true);
 
@@ -19,7 +20,7 @@ const GroupsPage = () => {
     setGroups(response.data.groups);
   }, [toggle]);
 
-  // Mapping our groups to render on page
+  // Mapping out groups to render on page
   const listGroups = groups.map((group, index) => {
     return (
       <Container key={index}>
@@ -28,17 +29,18 @@ const GroupsPage = () => {
           <Card.Body>
             <Card.Title>{group.displayName}</Card.Title>
             <Card.Text>{group.location}</Card.Text>
-            <div className="edit-del-btns"><EditGroupForm
-              toggle={toggle}
-              setToggle={setToggle}
-              groupId={group._id}
-              groupDisplayName={group.displayName}
-              groupLocation={group.location}
-              groupProjects={group.projects}
-            />
-            <Button variant="danger" onClick={() => handleDelete(group._id)}>
-              Delete
-            </Button>
+            <div className="edit-del-btns">
+              <EditGroupForm
+                toggle={toggle}
+                setToggle={setToggle}
+                groupId={group._id}
+                groupDisplayName={group.displayName}
+                groupLocation={group.location}
+                groupProjects={group.projects}
+              />
+              <Button variant="danger" onClick={() => handleDelete(group._id)}>
+                Delete
+              </Button>
             </div>
           </Card.Body>
         </Card>
@@ -48,7 +50,7 @@ const GroupsPage = () => {
 
   // handleDelete
   const handleDelete = async (id) => {
-   await axios.delete(apiUrl + "/groups/" + id);
+    await axios.delete(apiUrl + "/groups/" + id);
     setToggle(!toggle);
   };
 

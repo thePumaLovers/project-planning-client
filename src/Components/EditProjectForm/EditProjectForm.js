@@ -1,10 +1,10 @@
+import { useState } from "react";
+import axios from "axios";
+import apiUrl from "../../apiUrl";
 import Modal from "react-bootstrap/Modal";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useState } from "react";
-import axios from "axios";
-import apiUrl from "../../apiUrl";
 
 const EditProjectForm = ({
   toggle,
@@ -15,6 +15,7 @@ const EditProjectForm = ({
   projectDescription,
   isCompleted,
 }) => {
+  // useStates
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     projectName: "",
@@ -57,21 +58,11 @@ const EditProjectForm = ({
     setToggle(!toggle);
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   axios.put(apiUrl + '/groups/' + groupId, {
-  //     displayName: form.displayName === '' ? groupDisplayName : form.displayName,
-  //     location: form.location === '' ? groupLocation : form.location,
-  //     projects: groupProjects
-  //   });
-  //   setToggle(!toggle);
-
   return (
     <Container>
       <Button variant="secondary" onClick={handleShow}>
         Edit Project
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Project</Modal.Title>
@@ -107,7 +98,6 @@ const EditProjectForm = ({
               controlId="formIsCompleted"
             >
               <Form.Label>Project Completed</Form.Label>
-
               <Form.Check
                 type="checkbox"
                 defaultChecked={isCompleted}
