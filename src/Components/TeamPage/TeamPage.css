@@ -22,3 +22,11 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.puma-logo {
+    max-width: 200px;
+}
+
+.accordion-body {
+    text-align: left;
+}
