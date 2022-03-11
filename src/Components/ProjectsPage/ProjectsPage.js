@@ -14,6 +14,9 @@ const ProjectsPage = () => {
   const [groupProjects, setGroupProjects] = useState({});
   const [toggle, setToggle] = useState(true);
 
+  // Variable to hold single group id
+  let groupId = groupProjects._id;
+
   // GET request for all groups
   useEffect(async () => {
     const response = await axios.get(apiUrl + "/groups");
@@ -53,7 +56,6 @@ const ProjectsPage = () => {
   });
 
   // Mapping projects from selected group to cards
-  let groupId = groupProjects._id;
 
   const listProjects = groupProjects.projects?.map((project, index) => {
     return (
