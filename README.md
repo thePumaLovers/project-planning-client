@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Links
 
-## Available Scripts
+- [Front-End Repo](https://github.com/thePumaLovers/project-planning-client)
+- [Front-End Deployed ](https://thepumalovers.github.io/project-planning-client/)
 
-In the project directory, you can run:
+## Project Schedule
 
-### `npm start`
+| Day |                       Deliverable                        |               Status                |
+| --- | :------------------------------------------------------: | :---------------------------------: |
+| 1   |                Project Worksheet approved                |              Complete               |
+| 1   | Create basic back end (connection, models, controllers)  |              Complete               |
+| 2   | Create basic front end (routing pages, placeholder text) |              Complete               |
+| 2   |          Minimal styling and responsive design           |              Complete               |
+| 3   |               Main CRUD form on front end                |              Complete               |
+| 3   |                Deploy back end, meet MVP                 |              Complete               |
+| 4   |      User Authentication, animation, accessibility       | Incomplete (accessibility complete) |
+| 5   |                         Present                          |             Incomplete              |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Our app will be used for keeping track of a user's projects. The goal of the data structure is to let our app fit the mold of many different projects. While user authentication will be a post-mvp, we want users to have a place to store their ideas.
 
-### `npm test`
+## Project Process
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We decided to implement the back-end as a group and mob programmed for the majority of the first day. This allowed us to all have input on the routes we were creating and how they were coded.
 
-### `npm run build`
+The beginning of the front-end was similar where we mob programmed until we had the skeletal structure of the app configured (routes, folder structure, etc.). At that point, we broke off into pair programming to hit the two pages with CRUD routing.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+As we continued the process, we became more and more free-form with how we were splitting off. Occasionally, one of us would break off from the main group, play in a lab-like setting with a feature, and then bring it back to the group for full implementation into the project.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+As we concluded the process, we deployed as a group to celebrate our successes!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## User-Story
 
-### `npm run eject`
+Our user is someone who is interested in planning projects. They are looking for a smooth, easy way to view, create, edit, and delete their projects in one place. Our user has found themselves at a loss with traditional project management software, which can have unnecessary features that can complicate their project planning. Our app will be easy to interact with and a useful organization tool.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Team Duties
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ross focused on higher level design thoughts with the application and implemented the landing page's video. Additionally, he implemented the cards on the projects page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Juan focused on color schemes and design, and implemented both back-end and front-end code.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Aidyn created data structures and spearheaded the back-end design. Zie also was our fearless project manager while implementing bootstrap components on the front-end.
 
-## Learn More
+Matt focused on the structure of the front-end and how the routes would interact with the back-end. Additionally, he facilitated conversations between teammembers and helped resolve differing opinions.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Routing Table to Back-End
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Project Routes
 
-### Code Splitting
+| URL                                    |  HTTP  | Action |          Description          |
+| -------------------------------------- | :----: | :----: | :---------------------------: |
+| /groupid/:groupid                      |  POST  | create |     create a new project      |
+| /groupid/:groupid/projectid/:projectid |  PUT   | update | update a single project by id |
+| /groupid/:groupid/projectid/:projectid | DELETE | delete | delete a single project by id |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Group Routes
 
-### Analyzing the Bundle Size
+| URL  |  HTTP  | Action |         Description         |
+| ---- | :----: | :----: | :-------------------------: |
+| /    |  GET   |  show  |       show all groups       |
+| /:id |  GET   |  show  |    show one group by id     |
+| /    |  POST  | create |     create a new group      |
+| /:id |  PUT   | update | update a single group by id |
+| /:id | DELETE | delete | delete a single gropu by id |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## React Routes
 
-### Making a Progressive Web App
+- Home
+- Groups Page
+- Projects Page
+- Team Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## React Components
 
-### Advanced Configuration
+| Component             |                         Description                         |
+| --------------------- | :---------------------------------------------------------: |
+| App                   |                   React Router home base                    |
+| Header                |                   Holds Navbar and links                    |
+| Group Add/Edit Form   |    State, holds info for push/put request for new Group     |
+| Landing Page          |       Stateless. Little blurb about project and video       |
+| Groups Page           |  State, View all groups and create, add, delete, from here  |
+| Project Add/Edit Form | State, will hold a lot of information for the push request  |
+| Projects Page         | State, View all projects and create, add, delete, from here |
+| Teams                 |                       Stateless, bios                       |
+| Footer                |                          Stateless                          |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## MVP
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Develop back-end with current data structure
+- Develop routing of pages for front end
+- Develop front-end functionality with basic CRUD actions
+- Responsive design
 
-### `npm run build` fails to minify
+## Post-MVP
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Add logo
+- Update form to become empty after adding new group/project
+- Use Lighthouse to check accessibility
+
+## Time Frame
+
+| Component                       | Priority | Estimated Time | Actual Time |
+| ------------------------------- | :------: | :------------: | :---------: |
+| Initial server setup            |    H     |      2hrs      |    2hrs     |
+| Creating models and controllers |    H     |      3hrs      |    2hrs     |
+| Seed data                       |    H     |      3hrs      |    1hrs     |
+| Nav                             |    H     |      3hrs      |    2hrs     |
+| Landing/About page              |    H     |      1hrs      |    1hrs     |
+| Projects page                   |    H     |     1.5hrs     |    6hrs     |
+| Users projects page             |    H     |      3hrs      |    8hrs     |
+| Individual project page         |    H     |      5hrs      |     hrs     |
+| Team page                       |    H     |      2hrs      |    3hrs     |
+| Total                           |    H     |    24.5hrs     |    26hrs    |
+
+## Additional Libraries
+
+- Axios
+- React Bootstrap
+- React Router
+- Fontsource
+
+## Code Snippets
+
+This was an interesting use case of utilizing a for loop to update the state of an individual group object and then have it properly re-render it's updated projects out on the page.
+
+```js
+useEffect(() => {
+  for (let i = 0; i < groups.length; i++) {
+    if (groupId === groups[i]._id) {
+      setGroupProjects(groups[i]);
+    }
+  }
+}, [groups]);
+```
