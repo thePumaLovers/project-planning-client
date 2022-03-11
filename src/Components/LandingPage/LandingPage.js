@@ -16,8 +16,8 @@ const LandingPage = () => {
         top: 0}}>
       <source src={backgroundVideo} type='video/mp4'></source>  
       </video>
-      <h1>Project Planning</h1>
-      <p>Welcome to Project Planning, a way to organize your projects.  Whether you want to build a birdhouse or plan a cross-country road trip, Project Planning will help you explore your goals and help you break them down into manageable steps!</p>
+      <h1>GoalGetter</h1>
+      <p>Welcome to GoalGetter, a way to organize your projects.  Whether you want to build a birdhouse or plan a cross-country road trip, GoalGetter will help you explore your goals and help you break them down into manageable steps!</p>
       </div>
     </Container>
   );

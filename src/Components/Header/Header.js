@@ -27,7 +27,7 @@ const Header = () => {
               </Link>
             </Nav>
           </Navbar.Collapse>
-          <Navbar.Brand className="brand"><p id="brand-text">Project Planning</p></Navbar.Brand>
+          <Navbar.Brand className="brand"><p id="brand-text">GoalGetter</p></Navbar.Brand>
         </Container>
       </Navbar>
     </Container>
