@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/project-planning-client/static/css/main.268714f4.css",
+    "main.css": "/project-planning-client/static/css/main.2ce46b2e.css",
     "main.js": "/project-planning-client/static/js/main.7e2bc0b5.js",
     "static/js/787.ad5ae6f1.chunk.js": "/project-planning-client/static/js/787.ad5ae6f1.chunk.js",
     "static/media/videofile.mp4": "/project-planning-client/static/media/videofile.f6dbe76f482e12594f91.mp4",
@@ -18,12 +18,12 @@
     "static/media/quicksand-latin-ext-400-normal.woff2": "/project-planning-client/static/media/quicksand-latin-ext-400-normal.7791828d964afa8439da.woff2",
     "static/media/quicksand-vietnamese-400-normal.woff2": "/project-planning-client/static/media/quicksand-vietnamese-400-normal.5365b00319d96e3bc966.woff2",
     "index.html": "/project-planning-client/index.html",
-    "main.268714f4.css.map": "/project-planning-client/static/css/main.268714f4.css.map",
+    "main.2ce46b2e.css.map": "/project-planning-client/static/css/main.2ce46b2e.css.map",
     "main.7e2bc0b5.js.map": "/project-planning-client/static/js/main.7e2bc0b5.js.map",
     "787.ad5ae6f1.chunk.js.map": "/project-planning-client/static/js/787.ad5ae6f1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.268714f4.css",
+    "static/css/main.2ce46b2e.css",
     "static/js/main.7e2bc0b5.js"
   ]
 }
