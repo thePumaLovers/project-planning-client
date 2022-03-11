@@ -66,6 +66,9 @@ Matt focused on the structure of the front-end and how the routes would interact
 | /:id |  PUT   | update | update a single group by id |
 | /:id | DELETE | delete | delete a single gropu by id |
 
+To note, we did not end up utilizing our single group route. Initially, we were going to have an individual project page which this route would have been used for. We ended up scrapping the individual project page on version one, however this could be used in a future version of the application.
+
+
 ## React Routes
 
 - Home
