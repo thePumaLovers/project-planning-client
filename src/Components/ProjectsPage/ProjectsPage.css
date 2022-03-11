@@ -15,6 +15,19 @@
     border-color: var(--dark-turquoise);
 }
 
+.btn-primary {
+    background-color: var(--dark-turquoise);
+    color: var(--black);
+    border-color: var(--darker-turquoise);
+    margin: 2vh 0vh 2vh 0vh;
+}
+
+.btn-primary:hover {
+    background-color: var(--lighter-turquoise);
+    color: var(--black);
+    border-color: var(--dark-turquoise);
+}
+
 .btn-secondary {
     background-color: var(--carrot-orange);
     color: var(--black);

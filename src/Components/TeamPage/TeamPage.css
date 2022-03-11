@@ -11,7 +11,7 @@
     color: var(--black)
 }
 
-img {
+.avatar {
     max-width: 80px;
     padding: 0.1vh;
     margin: 0vh 1.5vh 0vh 0vh;
@@ -21,4 +21,12 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.puma-logo {
+    max-width: 200px;
+}
+
+.accordion-body {
+    text-align: left;
 }
