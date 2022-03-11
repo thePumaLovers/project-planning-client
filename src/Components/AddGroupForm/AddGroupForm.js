@@ -35,6 +35,11 @@ const AddGroupForm = ({toggle, setToggle}) => {
       projects: []
     });
     setToggle(!toggle);
+    setForm({
+      displayName: "",
+      location: "",
+      projects: [],
+    })
 
   };
 

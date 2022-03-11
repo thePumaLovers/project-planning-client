@@ -36,6 +36,11 @@ const AddProjectForm = ({ toggle, setToggle, groupId }) => {
       isCompleted: false,
     });
     setToggle(!toggle);
+    setForm({
+      projectName: "",
+      projectDescription: "",
+      isCompleted: false,
+    })
   };
 
   return (
