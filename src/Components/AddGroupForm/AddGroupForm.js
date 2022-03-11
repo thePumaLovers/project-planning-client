@@ -1,11 +1,12 @@
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import axios from "axios";
 import apiUrl from "../../apiUrl";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
-const AddGroupForm = ({toggle, setToggle}) => {
+const AddGroupForm = ({ toggle, setToggle }) => {
+  // useStates
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     displayName: "",
@@ -29,18 +30,17 @@ const AddGroupForm = ({toggle, setToggle}) => {
   // handleSubmit and POST request
   const handleSubmit = async (event) => {
     event.preventDefault();
-   await axios.post(apiUrl + '/groups', {
+    await axios.post(apiUrl + "/groups", {
       displayName: form.displayName,
       location: form.location,
-      projects: []
+      projects: [],
     });
     setToggle(!toggle);
     setForm({
       displayName: "",
       location: "",
       projects: [],
-    })
-
+    });
   };
 
   return (
@@ -48,7 +48,6 @@ const AddGroupForm = ({toggle, setToggle}) => {
       <Button variant="primary" onClick={handleShow}>
         Add a Group
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add New Group</Modal.Title>

@@ -1,12 +1,13 @@
+import { useState } from "react";
+import axios from "axios";
+import apiUrl from "../../apiUrl";
 import Modal from "react-bootstrap/Modal";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useState } from "react";
-import axios from "axios";
-import apiUrl from "../../apiUrl";
 
 const AddProjectForm = ({ toggle, setToggle, groupId }) => {
+  // useStates
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     projectName: "",
@@ -40,7 +41,7 @@ const AddProjectForm = ({ toggle, setToggle, groupId }) => {
       projectName: "",
       projectDescription: "",
       isCompleted: false,
-    })
+    });
   };
 
   return (
@@ -48,7 +49,6 @@ const AddProjectForm = ({ toggle, setToggle, groupId }) => {
       <Button variant="primary" onClick={handleShow}>
         Add New Project
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add New Project</Modal.Title>

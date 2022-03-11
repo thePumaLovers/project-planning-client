@@ -1,11 +1,19 @@
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import axios from "axios";
 import apiUrl from "../../apiUrl";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
-const EditGroupForm = ({toggle, setToggle, groupId, groupDisplayName, groupLocation, groupProjects}) => {
+const EditGroupForm = ({
+  toggle,
+  setToggle,
+  groupId,
+  groupDisplayName,
+  groupLocation,
+  groupProjects,
+}) => {
+  // useStates
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({
     displayName: "",
@@ -29,13 +37,13 @@ const EditGroupForm = ({toggle, setToggle, groupId, groupDisplayName, groupLocat
   // handleSubmit and PUT request
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await axios.put(apiUrl + '/groups/' + groupId, {
-      displayName: form.displayName === '' ? groupDisplayName : form.displayName,
-      location: form.location === '' ? groupLocation : form.location,
-      projects: groupProjects
+    await axios.put(apiUrl + "/groups/" + groupId, {
+      displayName:
+        form.displayName === "" ? groupDisplayName : form.displayName,
+      location: form.location === "" ? groupLocation : form.location,
+      projects: groupProjects,
     });
     setToggle(!toggle);
-
   };
 
   return (
@@ -43,7 +51,6 @@ const EditGroupForm = ({toggle, setToggle, groupId, groupDisplayName, groupLocat
       <Button variant="secondary" onClick={handleShow}>
         Edit
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Group</Modal.Title>

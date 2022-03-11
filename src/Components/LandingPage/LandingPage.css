@@ -1,15 +1,12 @@
 .landing-page {
-    max-width: 90vh;
+  max-width: 90vh;
 }
 
 .landing-page h1 {
-    color: var(--eagle-green);
-    padding: 3vh;
+  color: var(--eagle-green);
+  padding: 3vh;
 }
 
 .landing-page p {
-    padding: 2vh 12vh;
+  padding: 2vh 12vh;
 }
-
-
-

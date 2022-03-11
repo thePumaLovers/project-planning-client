@@ -1,43 +1,43 @@
 .header {
-    width: 100%;
-    margin: 0;
-    padding: 0vh;
-    background-color: var(--dark-turquoise);
-    color: var(--white);
+  width: 100%;
+  margin: 0;
+  padding: 0vh;
+  background-color: var(--dark-turquoise);
+  color: var(--white);
 }
 
 .nav-bar {
-    width: 100%;
-    margin: 0;
-    padding: 0vh;
-    background-color: var(--dark-turquoise);
-    color: var(--white);
+  width: 100%;
+  margin: 0;
+  padding: 0vh;
+  background-color: var(--dark-turquoise);
+  color: var(--white);
 }
 
 .brand {
-    padding: 0vh 2vh;
+  padding: 0vh 2vh;
 }
 
 .nav-bar-link {
-    color: var(--black);
-    text-decoration: none;
+  color: var(--black);
+  text-decoration: none;
 }
 
 .nav-bar-link:hover {
-    background-color: var(--gunmetal);
-    color: var(--white);
+  background-color: var(--gunmetal);
+  color: var(--white);
 }
 
 #brand-text {
-    display: none;
+  display: none;
 }
 
 .me-auto {
-    padding: 0vh 0vh 1vh 0vh;
+  padding: 0vh 0vh 1vh 0vh;
 }
 
 .container {
-    margin: 0vh;
+  margin: 0vh;
 }
 
 /*
@@ -47,16 +47,16 @@ Bootstrap-Specific
 */
 
 .navbar {
-    padding: 0vh;
+  padding: 0vh;
 }
 
 #content-wrap {
-    padding: 0vh;
+  padding: 0vh;
 }
 
 #page-container {
-    margin: 0 auto;
-    width: 100%;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /*
@@ -66,15 +66,14 @@ T A B L E T
 */
 
 @media only screen and (min-width: 768px) {
-    #page-container {
-        margin: 0 auto;
-        width: 100%;
-    }
+  #page-container {
+    margin: 0 auto;
+    width: 100%;
+  }
 
-    .me-auto {
-        padding: 0vh;
-    }
-
+  .me-auto {
+    padding: 0vh;
+  }
 }
 
 /*
@@ -84,25 +83,24 @@ D E S K T O P
 */
 
 @media only screen and (min-width: 1024px) {
-    .nav-bar-link {
-        padding: 2vh 2vh;
-    }
+  .nav-bar-link {
+    padding: 2vh 2vh;
+  }
 
-    #brand-text {
-        display: inline;
-    }
+  #brand-text {
+    display: inline;
+  }
 
-    #page-container {
-        margin: 0 auto;
-        width: 100%;
-    }
+  #page-container {
+    margin: 0 auto;
+    width: 100%;
+  }
 
-    #bottom-link {
-        padding: 2vh;
-    }
+  #bottom-link {
+    padding: 2vh;
+  }
 
-    .me-auto {
-        padding: 0vh;
-    }
-    
+  .me-auto {
+    padding: 0vh;
+  }
 }

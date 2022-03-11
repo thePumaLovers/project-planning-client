@@ -1,8 +1,8 @@
-import './Header.css'
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
+import "./Header.css";
 import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
 const Header = () => {
   return (
@@ -10,11 +10,10 @@ const Header = () => {
       <Navbar bg="dark" expand="lg">
         <Container className="nav-bar">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Link className="nav-bar-link" to="/">
-               Home
+                Home
               </Link>
               <Link className="nav-bar-link" to="/groups">
                 Groups
@@ -27,7 +26,9 @@ const Header = () => {
               </Link>
             </Nav>
           </Navbar.Collapse>
-          <Navbar.Brand className="brand"><p id="brand-text">GoalGetter</p></Navbar.Brand>
+          <Navbar.Brand className="brand">
+            <p id="brand-text">GoalGetter</p>
+          </Navbar.Brand>
         </Container>
       </Navbar>
     </Container>
@@ -35,14 +36,3 @@ const Header = () => {
 };
 
 export default Header;
-
-{
-  /* <nav>
-<ul>
-  <li><Link to='/'>Home</Link></li>
-  <li><Link to='/groups'>Groups</Link></li>
-  <li><Link to='/projects'>Projects</Link></li>
-  <li><Link to='/team'>Team</Link></li>
-</ul>
-</nav> */
-}

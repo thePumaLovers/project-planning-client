@@ -1,16 +1,17 @@
+import "./ProjectsPage.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import apiUrl from "../../apiUrl";
 import AddProjectForm from "../AddProjectForm/AddProjectForm";
 import EditProjectForm from "../EditProjectForm/EditProjectForm";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import apiUrl from "../../apiUrl";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Dropdown from "react-bootstrap/Dropdown";
-import "./ProjectsPage.css";
-import plants from '../../images/plants.jpg'
+import plants from "../../images/plants.jpg";
 
 const ProjectsPage = () => {
+  // useStates
   const [groups, setGroups] = useState([]);
   const [groupProjects, setGroupProjects] = useState({});
   const [toggle, setToggle] = useState(true);
@@ -24,7 +25,7 @@ const ProjectsPage = () => {
     setGroups(response.data.groups);
   }, [toggle]);
 
-  // Second useEffect
+  // useEffect to refresh projects after PUT request
   useEffect(() => {
     for (let i = 0; i < groups.length; i++) {
       if (groupId === groups[i]._id) {
@@ -57,7 +58,6 @@ const ProjectsPage = () => {
   });
 
   // Mapping projects from selected group to cards
-
   const listProjects = groupProjects.projects?.map((project, index) => {
     return (
       <Container key={index}>
@@ -69,18 +69,23 @@ const ProjectsPage = () => {
               {project.projectDescription}
               {project.isCompleted}
             </Card.Text>
-            <div className="edit-del-btns"><EditProjectForm
-              toggle={toggle}
-              setToggle={setToggle}
-              groupId={groupId}
-              projectId={project._id}
-              projectName={project.projectName}
-              projectDescription={project.projectDescription}
-              isCompleted={project.isCompleted}
-            />
-            <Button variant="danger" onClick={() => handleDelete(project._id)}>
-              Delete
-            </Button></div>
+            <div className="edit-del-btns">
+              <EditProjectForm
+                toggle={toggle}
+                setToggle={setToggle}
+                groupId={groupId}
+                projectId={project._id}
+                projectName={project.projectName}
+                projectDescription={project.projectDescription}
+                isCompleted={project.isCompleted}
+              />
+              <Button
+                variant="danger"
+                onClick={() => handleDelete(project._id)}
+              >
+                Delete
+              </Button>
+            </div>
           </Card.Body>
         </Card>
       </Container>
@@ -90,7 +95,6 @@ const ProjectsPage = () => {
   return (
     <div>
       <h2 className="projects-title">Projects</h2>
-
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
           {groupProjects.displayName
@@ -108,7 +112,6 @@ const ProjectsPage = () => {
       ) : (
         ""
       )}
-
       {listProjects}
     </div>
   );

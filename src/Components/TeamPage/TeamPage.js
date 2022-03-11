@@ -3,8 +3,8 @@ import Accordion from "react-bootstrap/Accordion";
 import Container from "react-bootstrap/Container";
 import aidynavatar from "../../images/aidynavatar.png";
 import juanavatar from "../../images/juanavatar.png";
-import rossavatar from "../../images/rossavatar.png";
 import mattavatar from "../../images/mattavatar.png";
+import rossavatar from "../../images/rossavatar.png";
 import pumalogo from "../../images/pumalogo.png";
 
 const TeamPage = () => {
